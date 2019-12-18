@@ -3,7 +3,7 @@
   debug: msg="{{ ansible_facts['distribution'] }}"
 
 - name: Prepare Tetration Sensor Installation Directory
-  file:
+  win_file:
     state: direcotry
     path: C:\Temp
 
@@ -22,6 +22,6 @@
   win_service: name=tet-sensor state=restarted start_mode=auto
 
 - name: Prepare Tetration Sensor Installation Directory
-  file:
+  win_file:
     state: direcotry
     path: C:\Temp
