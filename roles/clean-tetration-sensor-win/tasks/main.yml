@@ -1,9 +1,6 @@
 ---
 - name: Remove Tetration Sensor
-  # win_command: 'START "C:\Program Files\Cisco Tetration\UninstallAll.lnk"'
-  win_psexec:
-    command: 'START "C:\Program Files\Cisco Tetration\UninstallAll.lnk"'
-    elevated: yes
+  win_command: 'wmic product where name="Cisco Tetration Agent" call uninstall'
 
 - name: Remove Tetration Sensor Directory
   win_file: state=absent path='C:\Program Files\Cisco Tetration'
