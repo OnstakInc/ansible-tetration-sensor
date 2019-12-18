@@ -18,7 +18,7 @@
       state: present
 
 - name: Copy User Config File
-  template: src=user.cfg.j2 dest=C:\Program Files\Cisco Tetration\user.cfg mode=0644
+  win_template: src=user.cfg.j2 dest=C:\Program Files\Cisco Tetration\user.cfg mode=0644
 
 - name: Restart a service
   win_service: name=tet-sensor state=restarted start_mode=auto
