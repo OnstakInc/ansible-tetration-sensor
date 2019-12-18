@@ -25,8 +25,8 @@
 
 - name: Install Tetration Sensor On Windows Host
   block:
-    - debug:
-      msg: ansible_facts['distribution']
+    - name: Debug Message
+      debug: msg="{{ ansible_facts['distribution'] }}"
 
     # - name: Prepare Tetration Sensor Installation Directory
     #   file:
