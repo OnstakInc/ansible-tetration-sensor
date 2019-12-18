@@ -19,6 +19,3 @@
 
 - name: Restart Tetration Sensor Service
   win_service: name=WindowsTetEngine state=restarted start_mode=auto
-
-- name: Restart Tetration Engine Service
-  win_service: name=WindowsAgentEngine state=restarted start_mode=auto
