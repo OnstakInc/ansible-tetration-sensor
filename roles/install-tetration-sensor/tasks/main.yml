@@ -26,7 +26,7 @@
 - name: Install Tetration Sensor On Windows Host
   block:
     - debug:
-      msg: "Distribution Name: {{ ansible_facts['distribution'] }}"
+      msg: ansible_facts['distribution']
 
     # - name: Prepare Tetration Sensor Installation Directory
     #   file:
@@ -52,4 +52,4 @@
     #     state: direcotry
     #     path: C:\Temp
 
-  # when: (ansible_facts['distribution'] == "Windows")
+  when: (ansible_facts['distribution'] == "CentOS")
