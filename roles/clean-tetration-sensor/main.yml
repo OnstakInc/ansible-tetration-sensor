@@ -14,7 +14,7 @@
 
 - name: Remove Tetration Sensor From Windows Host
   block:
-    - debug:
-      msg: "Distribution Name: {{ ansible_facts['distribution'] }}"
+    - name: Debug Message
+      debug: msg="{{ ansible_facts['distribution'] }}"
         
   when: (ansible_facts['distribution'] == 'CentOS') or (ansible_facts['distribution'] == 'RedHat')
