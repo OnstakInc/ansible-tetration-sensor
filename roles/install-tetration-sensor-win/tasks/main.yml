@@ -8,12 +8,12 @@
     state: directory
 
 - name: Copy Tetration Sensor Zip File
-  win_copy: src={{ win_sensor_file }} dest=C:\
+  win_copy: src={{ win_sensor_file }} dest=C:/Temp/tet-sensor.zip
 
 - name: Extract Tetration Sensor Zip File
   win_unzip:
-    src: C:\Temp\tet-sensor.zip
-    dest: C:\Temp
+    src: C:/Temp/tet-sensor.zip
+    dest: C:/Temp
 
 - name: Install Tetration Sensor MSI
   win_command: '"C:\Temp\update\TetrationAgentInstaller.msi" /quiet'
