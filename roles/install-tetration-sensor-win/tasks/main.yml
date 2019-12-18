@@ -17,5 +17,8 @@
 - name: Copy User Config File
   win_template: src=user.cfg.j2 dest='C:\Program Files\Cisco Tetration\user.cfg'
 
-- name: Restart a service
-  win_service: name=tet-sensor state=restarted start_mode=auto
+- name: Restart Tetration Sensor Service
+  win_service: name=WindowsTetEngine state=restarted start_mode=auto
+
+- name: Restart Tetration Engine Service
+  win_service: name=WindowsAgentEngine state=restarted start_mode=auto
