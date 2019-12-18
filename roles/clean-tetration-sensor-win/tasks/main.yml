@@ -1,15 +1,9 @@
 ---
 - name: Remove Tetration Sensor
-  win_package:
-      path: C:\Temp\update\TetrationAgentInstaller.msi
-      state: absent
+  win_package: path=C:\Temp\update\TetrationAgentInstaller.msi state=absent
 
 - name: Remove Tetration Sensor Directory
-  win_file:
-    state: absent
-    path: 'C:\Program Files\Cisco Tetration'
+  win_file: state=absent path='C:\Program Files\Cisco Tetration'
   
 - name: Clean Up Temp Files
-  win_file:
-    state: absent
-    path: C:\Temp
+  win_file: state=absent path=C:\Temp
