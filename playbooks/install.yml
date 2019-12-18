@@ -1,5 +1,9 @@
 ---
-  - hosts: all
-    become: true
+  # - hosts: all
+  #   become: true
+  #   roles:
+  #     - install-tetration-sensor-linux
+
+  - hosts: win
     roles:
-      - install-tetration-sensor
+      - install-tetration-sensor-win

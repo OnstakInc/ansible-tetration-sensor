@@ -1,0 +1,20 @@
+- name: Remove Tetration Sensor From Linux Host
+  block:
+    - name: Remove Tetration Sensor
+      yum:
+        name: tet-sensor-site
+        state: absent
+
+    - name: Remove Tetration Sensor Directory
+      file:
+        state: absent
+        path: /usr/local/tet
+
+  when: (ansible_facts['distribution'] == 'CentOS') or (ansible_facts['distribution'] == 'RedHat')
+
+- name: Remove Tetration Sensor From Windows Host
+  block:
+    - name: Debug Message
+      debug: msg="{{ ansible_facts['distribution'] }}"
+        
+  when: "'Windows' in ansible_facts['distribution']"
