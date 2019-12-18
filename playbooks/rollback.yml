@@ -1,9 +1,10 @@
 ---
-  # - hosts: all
-  #   become: true
-  #   roles:
-  #     - clean-tetration-sensor-linux
+  - hosts: linux
+    become: true
+    roles:
+      - clean-tetration-sensor-linux
 
   - hosts: win
     roles:
       - clean-tetration-sensor-win
+      
