@@ -13,7 +13,7 @@
 #   ignore_errors: yes
 
 - name: Install Tetration Sensor MSI
-  win_command: 'C:\Temp\update\TetrationAgentInstaller.msi /passive'
+  win_command: 'C:/Temp/update/TetrationAgentInstaller.msi /passive'
   ignore_errors: yes
 
 - name: Copy User Config File
