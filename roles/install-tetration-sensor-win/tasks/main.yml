@@ -4,11 +4,11 @@
 
 - name: Prepare Tetration Sensor Installation Directory
   win_file:
-    state: directory
     path: C:\Temp
+    state: directory
 
 - name: Copy Tetration Sensor Zip File
-  win_copy: src={{ win_sensor_file }} dest=C:\Temp\tet-sensor.zip
+  win_copy: src={{ win_sensor_file }} dest=C:\
 
 - name: Extract Tetration Sensor Zip File
   win_unzip:
