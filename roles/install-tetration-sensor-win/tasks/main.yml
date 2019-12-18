@@ -8,8 +8,12 @@
 - name: Extract Tetration Sensor Zip File
   win_unzip: src=C:/Temp/tet-sensor.zip dest=C:/Temp
 
+# - name: Install Tetration Sensor MSI
+#   win_package: path=C:\Temp\update\TetrationAgentInstaller.msi state=present
+#   ignore_errors: yes
+
 - name: Install Tetration Sensor MSI
-  win_package: path=C:\Temp\update\TetrationAgentInstaller.msi state=present
+  win_command: C:\Temp\update\TetrationAgentInstaller.msi /passive
   ignore_errors: yes
 
 - name: Copy User Config File
