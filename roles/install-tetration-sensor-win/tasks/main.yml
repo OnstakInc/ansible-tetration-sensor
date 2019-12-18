@@ -18,7 +18,7 @@
 - name: Install Tetration Sensor MSI
   # win_command: '"C:/Temp/update/TetrationAgentInstaller.msi" /quiet'
   win_package:
-      path: C:/Temp/update/TetrationAgentInstaller.msi
+      path: C:\Temp\update\TetrationAgentInstaller.msi
       state: present
 
 - name: Restart a service
