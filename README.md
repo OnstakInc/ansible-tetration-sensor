@@ -15,7 +15,7 @@
     ---
     linux_sensor_file: your-tet-sensor-rpm
     win_sensor_file: your-tet-sensor-zip
-    activation_key: you-activation-key
+    activation_key: your-activation-key
     ```
 * Also add username and password for all the hosts i.e. inventory/hosts
 	```
