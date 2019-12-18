@@ -4,7 +4,7 @@
 
 - name: Prepare Tetration Sensor Installation Directory
   win_file:
-    state: direcotry
+    state: directory
     path: C:\Temp
 
 - name: Copy Tetration Sensor Zip File
@@ -23,5 +23,5 @@
 
 - name: Prepare Tetration Sensor Installation Directory
   win_file:
-    state: direcotry
+    state: directory
     path: C:\Temp
