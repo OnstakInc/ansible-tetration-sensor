@@ -31,28 +31,28 @@
     - name: Debug Message
       debug: msg="{{ ansible_facts['distribution'] }}"
 
-    # - name: Prepare Tetration Sensor Installation Directory
-    #   file:
-    #     state: direcotry
-    #     path: C:\Temp
+    - name: Prepare Tetration Sensor Installation Directory
+      file:
+        state: direcotry
+        path: C:\Temp
 
-    # - name: Copy Tetration Sensor Zip File
-    #   win_copy: src={{ win_sensor_file }} dest=C:\Temp\tet-sensor.zip
+    - name: Copy Tetration Sensor Zip File
+      win_copy: src={{ win_sensor_file }} dest=C:\Temp\tet-sensor.zip
 
-    # - name: Extract Tetration Sensor Zip File
-    #   win_unzip:
-    #     src: C:\Temp\tet-sensor.zip
-    #     dest: C:\Temp
+    - name: Extract Tetration Sensor Zip File
+      win_unzip:
+        src: C:\Temp\tet-sensor.zip
+        dest: C:\Temp
 
-    # - name: Install Tetration Sensor MSI
-    #   win_command: '"C:\Temp\update\TetrationAgentInstaller.msi" /quiet'
+    - name: Install Tetration Sensor MSI
+      win_command: '"C:\Temp\update\TetrationAgentInstaller.msi" /quiet'
 
-    # - name: Restart a service
-    #   win_service: name=tet-sensor state=restarted start_mode=auto
+    - name: Restart a service
+      win_service: name=tet-sensor state=restarted start_mode=auto
 
-    # - name: Prepare Tetration Sensor Installation Directory
-    #   file:
-    #     state: direcotry
-    #     path: C:\Temp
+    - name: Prepare Tetration Sensor Installation Directory
+      file:
+        state: direcotry
+        path: C:\Temp
 
-  # when: (ansible_facts['distribution'] == "Windows")
+  when: "'Windows' in ansible_facts['distribution']"

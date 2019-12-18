@@ -17,4 +17,4 @@
     - name: Debug Message
       debug: msg="{{ ansible_facts['distribution'] }}"
         
-  when: (ansible_facts['distribution'] == 'CentOS') or (ansible_facts['distribution'] == 'RedHat')
+  when: "'Windows' in ansible_facts['distribution']"
