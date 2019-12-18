@@ -14,6 +14,9 @@
     - name: Install Tetration Sensor RPM
       yum: name=/tmp/tet-sensor.rpm state=present
 
+    - name: Copy User Config File
+      template: src=user.cfg.j2 dest=/usr/local/tet/user.cfg mode=0644
+
     - name: Start and Enable Tetration Sensor Service
       service: name=tet-sensor state=restarted enabled=yes
 
@@ -52,4 +55,4 @@
     #     state: direcotry
     #     path: C:\Temp
 
-  when: (ansible_facts['distribution'] == "CentOS")
+  # when: (ansible_facts['distribution'] == "Windows")
