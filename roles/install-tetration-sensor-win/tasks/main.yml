@@ -10,6 +10,7 @@
 
 - name: Install Tetration Sensor MSI
   win_package: path=C:\Temp\update\TetrationAgentInstaller.msi state=present
+  ignore_errors: yes
 
 - name: Copy User Config File
   win_template: src=user.cfg.j2 dest='C:\Program Files\Cisco Tetration\user.cfg'
