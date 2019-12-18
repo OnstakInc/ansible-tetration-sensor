@@ -1,21 +1,15 @@
 ---
 - name: Prepare Tetration Sensor Installation Directory
-  win_file:
-    path: C:\Temp
-    state: directory
+  win_file: path=C:\Temp state=directory
 
 - name: Copy Tetration Sensor Zip File
   win_copy: src={{ win_sensor_file }} dest=C:/Temp/tet-sensor.zip
 
 - name: Extract Tetration Sensor Zip File
-  win_unzip:
-    src: C:/Temp/tet-sensor.zip
-    dest: C:/Temp
+  win_unzip: src=C:/Temp/tet-sensor.zip dest=C:/Temp
 
 - name: Install Tetration Sensor MSI
-  win_package:
-      path: C:\Temp\update\TetrationAgentInstaller.msi
-      state: present
+  win_package: path=C:\Temp\update\TetrationAgentInstaller.msi state=present
 
 - name: Copy User Config File
   win_template: src=user.cfg.j2 dest='C:\Program Files\Cisco Tetration\user.cfg'
