@@ -1,10 +1,6 @@
 ---
 - name: Remove Tetration Sensor
-  yum:
-    name: tet-sensor-site
-    state: absent
+  yum: name=tet-sensor-site state=absent
 
 - name: Remove Tetration Sensor Directory
-  file:
-    state: absent
-    path: /usr/local/tet
+  file: state=absent path=/usr/local/tet
