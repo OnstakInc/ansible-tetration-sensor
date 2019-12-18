@@ -1,5 +1,5 @@
 ---
-- name: Install Tetration Sensor MSI
+- name: Remove Tetration Sensor
   win_package:
       path: C:\Temp\update\TetrationAgentInstaller.msi
       state: absent
