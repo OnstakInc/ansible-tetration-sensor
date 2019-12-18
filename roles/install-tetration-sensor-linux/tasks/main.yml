@@ -1,10 +1,11 @@
 ---
 - name: Install Required Packages
-  yum: name={{ item }} state=present
-  with_items:
-    - redhat-lsb-core
-    - dmidecode
-    - ipset
+  yum: 
+    name:
+      - redhat-lsb-core
+      - dmidecode
+      - ipset
+    state: present
 
 - name: Copy Tetration Sensor RPM File
   copy: src={{ linux_sensor_file }} dest=/tmp/tet-sensor.rpm
