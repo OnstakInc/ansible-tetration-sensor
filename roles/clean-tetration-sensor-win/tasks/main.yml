@@ -1,20 +1,9 @@
-- name: Remove Tetration Sensor From Linux Host
-  block:
-    - name: Remove Tetration Sensor
-      yum:
-        name: tet-sensor-site
-        state: absent
+- name: Install Tetration Sensor MSI
+  win_package:
+      path: C:\Temp\update\TetrationAgentInstaller.msi
+      state: absent
 
-    - name: Remove Tetration Sensor Directory
-      file:
-        state: absent
-        path: /usr/local/tet
-
-  when: (ansible_facts['distribution'] == 'CentOS') or (ansible_facts['distribution'] == 'RedHat')
-
-- name: Remove Tetration Sensor From Windows Host
-  block:
-    - name: Debug Message
-      debug: msg="{{ ansible_facts['distribution'] }}"
-        
-  when: "'Windows' in ansible_facts['distribution']"
+- name: Remove Tetration Sensor Directory
+  win_file:
+    state: absent
+    path: 'C:\Program Files\Cisco Tetration'

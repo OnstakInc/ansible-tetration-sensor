@@ -1,7 +1,4 @@
 ---
-- name: Debug Message
-  debug: msg="{{ ansible_facts['distribution'] }}"
-
 - name: Prepare Tetration Sensor Installation Directory
   win_file:
     path: C:\Temp
@@ -16,15 +13,12 @@
     dest: C:/Temp
 
 - name: Install Tetration Sensor MSI
-  # win_command: '"C:/Temp/update/TetrationAgentInstaller.msi" /quiet'
   win_package:
       path: C:\Temp\update\TetrationAgentInstaller.msi
       state: present
 
+- name: Copy User Config File
+  template: src=user.cfg.j2 dest=C:\Program Files\Cisco Tetration\user.cfg mode=0644
+
 - name: Restart a service
   win_service: name=tet-sensor state=restarted start_mode=auto
-
-- name: Prepare Tetration Sensor Installation Directory
-  win_file:
-    state: directory
-    path: C:\Temp
