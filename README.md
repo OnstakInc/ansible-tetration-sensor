@@ -10,6 +10,13 @@
 
 * Navigate to the main repository directory
 * Add your hosts to inventory file
+* Update playbooks/group_vars/all.yml with following varibles
+    ```
+    ---
+    linux_sensor_file: your-tet-sensor-rpm
+    win_sensor_file: your-tet-sensor-zip
+    activation_key: you-activation-key
+    ```
 * Also add username and password for all the hosts i.e. inventory/hosts
 	```
 	[linux]
