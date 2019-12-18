@@ -1,0 +1,55 @@
+---
+- name: Install Tetration Sensor On Linux Host
+  block:
+    - name: Install Required Packages
+      yum: name={{ item }} state=present
+      with_items:
+        - redhat-lsb-core
+        - dmidecode
+        - ipset
+
+    - name: Copy Tetration Sensor RPM File
+      copy: src={{ linux_sensor_file }} dest=/tmp/tet-sensor.rpm
+
+    - name: Install Tetration Sensor RPM
+      yum: name=/tmp/tet-sensor.rpm state=present
+
+    - name: Start and Enable Tetration Sensor Service
+      service: name=tet-sensor state=restarted enabled=yes
+
+    - name: Clean Up Temp Files
+      file: path=/tmp/tet-sensor.rpm state=absent
+        
+  when: (ansible_facts['distribution'] == 'CentOS') or (ansible_facts['distribution'] == 'RedHat')
+
+
+- name: Install Tetration Sensor On Windows Host
+  block:
+    - debug:
+      msg: "Distribution Name: {{ ansible_facts['distribution'] }}"
+
+    # - name: Prepare Tetration Sensor Installation Directory
+    #   file:
+    #     state: direcotry
+    #     path: C:\Temp
+
+    # - name: Copy Tetration Sensor Zip File
+    #   win_copy: src={{ win_sensor_file }} dest=C:\Temp\tet-sensor.zip
+
+    # - name: Extract Tetration Sensor Zip File
+    #   win_unzip:
+    #     src: C:\Temp\tet-sensor.zip
+    #     dest: C:\Temp
+
+    # - name: Install Tetration Sensor MSI
+    #   win_command: '"C:\Temp\update\TetrationAgentInstaller.msi" /quiet'
+
+    # - name: Restart a service
+    #   win_service: name=tet-sensor state=restarted start_mode=auto
+
+    # - name: Prepare Tetration Sensor Installation Directory
+    #   file:
+    #     state: direcotry
+    #     path: C:\Temp
+
+  # when: (ansible_facts['distribution'] == "Windows")

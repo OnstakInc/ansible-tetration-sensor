@@ -1,0 +1,3 @@
+---
+linux_sensor_file: /tmp/tet-sensor.rpm
+win_sensor_file: /tmp/tet-sensor.zip
