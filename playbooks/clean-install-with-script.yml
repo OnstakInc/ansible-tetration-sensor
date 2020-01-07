@@ -1,0 +1,12 @@
+---
+  - hosts: linux
+    become: true
+    roles:
+      - clean-tetration-sensor-linux
+      - install-tetration-sensor-sh-linux
+
+  - hosts: win
+    roles:
+      - clean-tetration-sensor-win
+      - install-tetration-sensor-ps-win
+      
