@@ -2,3 +2,6 @@
 linux_sensor_file: /tmp/tet-sensor.rpm
 win_sensor_file: /tmp/tet-sensor.zip
 activation_key: your-activation-key
+
+linux_sensor_shell_script: /tmp/tet-linux-install-script.sh
+win_sensor_ps_script: /tmp/tet-win-install-script.ps1

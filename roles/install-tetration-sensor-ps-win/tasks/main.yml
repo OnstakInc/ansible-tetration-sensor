@@ -1,0 +1,13 @@
+---
+- name: Prepare Tetration Sensor Installation Directory
+  win_file: path=C:\Temp state=directory
+
+- name: Copy Tetration Sensor Zip File
+  win_copy: src={{ win_sensor_ps_script }} dest=C:/Temp/tet-install.ps1
+
+- name: Install Tetration Sensor With PowerShell Script
+  win_shell: C:/Temp/tet-install.ps1
+
+- name: Restart Tetration Sensor Service
+  win_service: name=WindowsTetEngine state=restarted start_mode=auto
+
