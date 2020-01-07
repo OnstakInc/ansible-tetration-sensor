@@ -11,7 +11,7 @@
   copy: src={{ linux_sensor_shell_script }} dest=/tmp/tet-install.sh mode=0755
 
 - name: Install Tetration Sensor With Shell Script
-  script: /tmp/tet-install.sh
+  command: /bin/bash /tmp/tet-install.sh
 
 - name: Start and Enable Tetration Sensor Service
   service: name=tet-sensor state=restarted enabled=yes
