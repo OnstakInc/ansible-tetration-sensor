@@ -5,6 +5,8 @@
       - redhat-lsb-core
       - dmidecode
       - ipset
+      - unzip
+      - lsof
     state: present
 
 - name: Copy Tetration Sensor RPM File
