@@ -2,7 +2,6 @@
 - name: Install Required Packages
   apt: 
     name:
-      - redhat-lsb-core
       - dmidecode
       - ipset
       - unzip
