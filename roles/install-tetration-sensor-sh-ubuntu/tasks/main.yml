@@ -1,6 +1,6 @@
 ---
 - name: Install Required Packages
-  yum: 
+  apt: 
     name:
       - redhat-lsb-core
       - dmidecode
