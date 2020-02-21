@@ -1,9 +1,9 @@
 ---
-  # - hosts: centos
-  #   become: true
-  #   roles:
-  #     - clean-tetration-sensor-centos
-  #     - install-tetration-sensor-sh-centos
+  - hosts: centos
+    become: true
+    roles:
+      - clean-tetration-sensor-centos
+      - install-tetration-sensor-sh-centos
 
   - hosts: ubuntu
     become: true
@@ -11,8 +11,8 @@
       - clean-tetration-sensor-ubuntu
       - install-tetration-sensor-sh-ubuntu
 
-  # - hosts: win
-  #   roles:
-  #     - clean-tetration-sensor-win
-  #     - install-tetration-sensor-ps-win
+  - hosts: win
+    roles:
+      - clean-tetration-sensor-win
+      - install-tetration-sensor-ps-win
       
