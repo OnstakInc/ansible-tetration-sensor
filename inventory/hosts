@@ -1,11 +1,19 @@
-[linux]
+[centos]
 127.0.0.1
 
-[linux:vars]
+[centos:vars]
 ansible_user=root
 ansible_password=123456778
 ansible_sudo_pass=12345678
 
+
+[ubuntu]
+127.0.0.1
+
+[ubuntu:vars]
+ansible_user=root
+ansible_password=123456778
+ansible_sudo_pass=12345678
 
 [win]
 127.0.0.1

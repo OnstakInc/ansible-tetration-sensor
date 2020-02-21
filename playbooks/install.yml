@@ -1,8 +1,8 @@
 ---
-  - hosts: linux
+  - hosts: centos
     become: true
     roles:
-      - install-tetration-sensor-linux
+      - install-tetration-sensor-centos
 
   - hosts: win
     roles:

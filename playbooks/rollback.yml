@@ -1,8 +1,8 @@
 ---
-  - hosts: linux
+  - hosts: centos
     become: true
     roles:
-      - clean-tetration-sensor-linux
+      - clean-tetration-sensor-centos
 
   - hosts: win
     roles:
