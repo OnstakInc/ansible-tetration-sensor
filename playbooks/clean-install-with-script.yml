@@ -8,7 +8,7 @@
   - hosts: ubuntu
     become: true
     roles:
-      - clean-tetration-sensor-centos
+      - clean-tetration-sensor-ubuntu
       - install-tetration-sensor-sh-ubuntu
 
   # - hosts: win
