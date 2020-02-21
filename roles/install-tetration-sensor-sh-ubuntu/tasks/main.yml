@@ -1,4 +1,7 @@
 ---
+- name: Update Repositories
+  command: apt-get update -y
+
 - name: Install Required Packages
   apt: 
     name:
