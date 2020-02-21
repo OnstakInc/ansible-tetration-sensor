@@ -6,6 +6,7 @@
       - ipset
       - unzip
       - lsof
+      - rpm
     state: present
 
 - name: Copy Tetration Sensor Shell Script File
